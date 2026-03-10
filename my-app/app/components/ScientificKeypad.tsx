@@ -83,22 +83,22 @@ export default function ScientificKeypad() {
 
       switch (func) {
         case 'sin':
-          result = scientificFunctions.sin(value, state.angleMode);
+          result = scientificFunctions.sin(value, state.angleMode as AngleMode);
           break;
         case 'cos':
-          result = scientificFunctions.cos(value, state.angleMode);
+          result = scientificFunctions.cos(value, state.angleMode as AngleMode);
           break;
         case 'tan':
-          result = scientificFunctions.tan(value, state.angleMode);
+          result = scientificFunctions.tan(value, state.angleMode as AngleMode);
           break;
         case 'asin':
-          result = scientificFunctions.asin(value, state.angleMode);
+          result = scientificFunctions.asin(value, state.angleMode as AngleMode);
           break;
         case 'acos':
-          result = scientificFunctions.acos(value, state.angleMode);
+          result = scientificFunctions.acos(value, state.angleMode as AngleMode);
           break;
         case 'atan':
-          result = scientificFunctions.atan(value, state.angleMode);
+          result = scientificFunctions.atan(value, state.angleMode as AngleMode);
           break;
         case 'log':
           result = scientificFunctions.log(value);

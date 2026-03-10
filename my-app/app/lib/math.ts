@@ -45,37 +45,51 @@ export function calculateExpression(
   }
 }
 
+// 角度转换辅助函数
+function toRadians(degrees: number): number {
+  return degrees * Math.PI / 180;
+}
+
 // 科学计算函数
 export const scientificFunctions = {
-  // 三角函数
-  sin: (x: number, mode: AngleMode) => sin(x, mode === AngleMode.DEGREE ? 'deg' : 'rad'),
-  cos: (x: number, mode: AngleMode) => cos(x, mode === AngleMode.DEGREE ? 'deg' : 'rad'),
-  tan: (x: number, mode: AngleMode) => tan(x, mode === AngleMode.DEGREE ? 'deg' : 'rad'),
+  // 三角函数 (mathjs 的 sin/cos/tan 需要弧度)
+  sin: (x: number, mode: AngleMode) => {
+    const radians = mode === AngleMode.DEGREE ? toRadians(x) : x;
+    return sin(radians) as number;
+  },
+  cos: (x: number, mode: AngleMode) => {
+    const radians = mode === AngleMode.DEGREE ? toRadians(x) : x;
+    return cos(radians) as number;
+  },
+  tan: (x: number, mode: AngleMode) => {
+    const radians = mode === AngleMode.DEGREE ? toRadians(x) : x;
+    return tan(radians) as number;
+  },
   asin: (x: number, mode: AngleMode) => {
-    const result = asin(x);
+    const result = asin(x) as number;
     return mode === AngleMode.DEGREE ? (result * 180 / Math.PI) : result;
   },
   acos: (x: number, mode: AngleMode) => {
-    const result = acos(x);
+    const result = acos(x) as number;
     return mode === AngleMode.DEGREE ? (result * 180 / Math.PI) : result;
   },
   atan: (x: number, mode: AngleMode) => {
-    const result = atan(x);
+    const result = atan(x) as number;
     return mode === AngleMode.DEGREE ? (result * 180 / Math.PI) : result;
   },
   
   // 对数函数
-  log: (x: number) => log10(x),
-  ln: (x: number) => log(x),
-  log2: (x: number) => log2(x),
+  log: (x: number) => log10(x) as number,
+  ln: (x: number) => log(x) as number,
+  log2: (x: number) => log2(x) as number,
   logBase: (x: number, base: number) => log(x) / log(base),
   
   // 指数函数
   exp: (x: number) => Math.exp(x),
   exp10: (x: number) => Math.pow(10, x),
   exp2: (x: number) => Math.pow(2, x),
-  pow: (x: number, y: number) => pow(x, y),
-  sqrt: (x: number) => sqrt(x),
+  pow: (x: number, y: number) => pow(x, y) as number,
+  sqrt: (x: number) => sqrt(x) as number,
   cbrt: (x: number) => Math.cbrt(x),
   
   // 其他函数
@@ -86,7 +100,7 @@ export const scientificFunctions = {
   factorial: (n: number) => {
     if (n < 0 || !Number.isInteger(n)) throw new Error('阶乘只支持非负整数');
     if (n > 170) throw new Error('数值过大');
-    return mathFactorial(n);
+    return mathFactorial(n) as number;
   },
   
   // 统计函数
