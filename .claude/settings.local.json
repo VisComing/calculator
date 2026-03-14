@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /home/ruifa/claudeCodeProjects/calculator/my-app -name *.test.ts -o -name *.test.tsx -o -name __tests__ -type d)",
+      "Bash(npm run:*)",
+      "Bash(npx next:*)",
+      "Bash(npm config:*)",
+      "Bash(node node_modules/next/dist/bin/next build)",
+      "Bash(node my-app/node_modules/next/dist/bin/next build)",
+      "Bash(npm install:*)",
+      "Bash(find . -type f -name *.md -o -name *.json -o -name *.ts -o -name *.tsx -o -name *.js -o -name *.jsx)"
+    ]
+  }
+}

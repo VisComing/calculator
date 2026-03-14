@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /home/ruifa/claudeCodeProjects/calculator/my-app -name *.test.* -o -name *.spec.*)",
+      "Bash(find /home/ruifa/claudeCodeProjects/calculator -name backend -o -name api -o -name *.py)",
+      "Bash(chmod +x node_modules/.bin/next)",
+      "Bash(chmod +x node_modules/.bin/*)",
+      "Bash(chmod +x /home/ruifa/claudeCodeProjects/calculator/my-app/node_modules/.bin/next)",
+      "Bash(/home/ruifa/claudeCodeProjects/calculator/my-app/node_modules/.bin/next build:*)",
+      "Bash(find /home/ruifa/claudeCodeProjects/calculator -type f -name *.json -o -name *.md -o -name *.js -o -name *.ts -o -name *.html)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(npx tsc:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude-code plugin:*)",
+      "mcp__plugin_claude-mem_mcp-search__search",
+      "Bash(echo:*)",
+      "Bash(git config:*)",
+      "Bash(curl:*)",
+      "Bash(sudo apt:*)",
+      "Bash(export:*)",
+      "Bash(unzip:*)"
+    ]
+  }
+}
